@@ -1,2 +1,3 @@
 # EDUS
-Encryption Decryption Utility Service
+
+Enveope encryption library using google protobuf. 
