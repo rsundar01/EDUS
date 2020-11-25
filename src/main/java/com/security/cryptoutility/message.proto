@@ -1,0 +1,43 @@
+syntax = "proto2";
+package com.security.cryptoutility;
+
+option java_package = "com.security.cryptoutility.message";
+option java_outer_classname = "MessageProtoc";
+
+message Message {
+
+
+optional int32 protocolversion = 1;
+
+enum KeySystem{
+    IDPS = 0;
+    KMS = 1;
+    SAFENET = 2;
+}
+
+optional KeySystem keysystem = 2;
+
+enum EncryptionAlgo{
+    AES128 = 0;
+    AES256 = 1;
+}
+optional EncryptionAlgo encryptionalog = 3;
+optional int32 masterkeyversion = 4;
+optional string masterkeyid = 5;
+
+optional string datakey = 6;
+
+enum SignatureAlgo{
+    HMACSHA256 = 0;
+}
+optional SignatureAlgo signaturealgo = 7;
+
+message CipherData{
+    optional bytes iv = 1;
+    optional bytes encrypted = 2;
+}
+optional CipherData cipherdata    = 8;
+
+optional string signature = 9;
+}
+

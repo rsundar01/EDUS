@@ -1,0 +1,3 @@
+
+<b>Protoc</b>
+protoc -I=./ --java_out=./src/main/java/ ./message.proto
